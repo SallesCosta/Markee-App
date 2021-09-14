@@ -34,7 +34,7 @@
     "web-vitals": "^1.0.1"
   },
   "eslintConfig": {
-    "extends": "./. eslintrc.json"
+    "extends": "./.eslintrc.json"
   },
   "browserslist": {
     "production": [
