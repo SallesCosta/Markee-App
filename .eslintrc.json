@@ -7,7 +7,7 @@
       "standard-react"
     ],
     "plugins": [
-      "only-warn "
+      "only-warn   "
     ],
     "rules": {
       "comma-dangle": [
