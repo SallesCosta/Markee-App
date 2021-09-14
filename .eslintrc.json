@@ -6,6 +6,9 @@
       "standard-jsx",
       "standard-react"
     ],
+    "plugins": [
+      "only-warn "
+    ],
     "rules": {
       "comma-dangle": [
         "error",
