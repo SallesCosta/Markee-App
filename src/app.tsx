@@ -13,6 +13,4 @@ const Title = styled.h1<TitleProps>`${({ theme }) => css`
   color: ${theme.colors.primary};
 `}`
 
-
-
 export { App }
