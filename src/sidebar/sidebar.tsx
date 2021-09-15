@@ -1,10 +1,10 @@
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components/macro'
 import { BtnAdicionar } from '../ui/buttons'
 
 export function Sidebar () {
   return (
     <SidebarInternal>
-      <BtnAdicionar />
+      <BtnAdicionar onClick={null}>+ Adicionar arquivo</BtnAdicionar>
     </SidebarInternal>
   )
 }
