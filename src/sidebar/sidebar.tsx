@@ -1,7 +1,12 @@
 import styled, { css } from 'styled-components'
+import { BtnAdicionar } from '../ui/buttons'
 
 export function Sidebar () {
-  return <SidebarInternal>sidebar component</SidebarInternal>
+  return (
+    <SidebarInternal>
+      <BtnAdicionar />
+    </SidebarInternal>
+  )
 }
 
 const SidebarInternal = styled.aside`${({ theme }) => css`
