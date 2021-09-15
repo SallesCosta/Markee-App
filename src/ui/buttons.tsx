@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components/macro'
 import { ReactNode } from 'react'
-import { P } from './titulos'
+import { PAdicionar } from './titulos'
 
 type BtnProps = {
   children: ReactNode | ReactNode[] | string
@@ -8,7 +8,7 @@ type BtnProps = {
 }
 
 export function BtnAdicionar ({ children, onClick }: BtnProps) {
-  return <BtnAddInternal onClick={onClick}><P texto={children} /></BtnAddInternal>
+  return <BtnAddInternal onClick={onClick}><PAdicionar texto={children} /></BtnAddInternal>
 }
 
 const BtnAddInternal = styled.button`${({ theme }) => css`
@@ -19,6 +19,5 @@ const BtnAddInternal = styled.button`${({ theme }) => css`
   height: 33.88px;
   left: 32px;
   top: 191px;
-
-
+  border-radius: 3.38806px;
 `}`
