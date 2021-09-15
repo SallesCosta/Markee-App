@@ -1,13 +1,14 @@
 import styled, { css } from 'styled-components/macro'
 import { ReactNode } from 'react'
+import { P } from './titulos'
 
 type BtnProps = {
-  children: ReactNode | ReactNode[]
+  children: ReactNode | ReactNode[] | string
   onClick?: any // TIPO ANY.. TYPO ANY - REVER - TIPO ANY.. TYPO ANY - REVER TIPO ANY.. TYPO ANY
 }
 
 export function BtnAdicionar ({ children, onClick }: BtnProps) {
-  return <BtnAddInternal onClick={onClick}>{children}</BtnAddInternal>
+  return <BtnAddInternal onClick={onClick}><P texto={children} /></BtnAddInternal>
 }
 
 const BtnAddInternal = styled.button`${({ theme }) => css`
