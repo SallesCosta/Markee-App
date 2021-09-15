@@ -4,7 +4,7 @@ import { BtnAdicionar } from '../ui/buttons'
 export function Sidebar () {
   return (
     <SidebarInternal>
-      <BtnAdicionar onClick={null}>+ Adicionar arquivo</BtnAdicionar>
+      <BtnAdicionar>+ Adicionar arquivo</BtnAdicionar>
     </SidebarInternal>
   )
 }

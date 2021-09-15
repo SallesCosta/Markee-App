@@ -4,7 +4,7 @@ import { PAdicionar } from './titulos'
 
 type BtnProps = {
   children: ReactNode | ReactNode[] | string
-  onClick?: any
+  onClick?: ()=> void | null
   // onClick?: React.MouseEvent<HTMLButtonElement> | undefined
 }
 
