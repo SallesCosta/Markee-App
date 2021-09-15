@@ -4,7 +4,8 @@ import { PAdicionar } from './titulos'
 
 type BtnProps = {
   children: ReactNode | ReactNode[] | string
-  onClick?: any // TIPO ANY.. TYPO ANY - REVER - TIPO ANY.. TYPO ANY - REVER TIPO ANY.. TYPO ANY
+  onClick?: any
+  // onClick?: React.MouseEvent<HTMLButtonElement> | undefined
 }
 
 export function BtnAdicionar ({ children, onClick }: BtnProps) {
