@@ -1,3 +1,13 @@
+import styled, { css } from 'styled-components'
+
 export function Content () {
-  return <h1>Content component</h1>
+  return <ContentInternal>Content component</ContentInternal>
 }
+
+const ContentInternal = styled.aside`${({ theme }) => css`
+background: ${theme.colors.white};
+position: relative;
+margin-left: 332px;
+width: 100%-332px;
+height: 100%;
+`}`
