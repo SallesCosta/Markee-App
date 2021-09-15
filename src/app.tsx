@@ -1,7 +1,7 @@
+// import styled from "styled-components/macro"
 
-
-function App (){
-  return <div>App</div>
+function App () {
+  return <h1>App</h1>
 }
 
-export {App}
+export { App }
