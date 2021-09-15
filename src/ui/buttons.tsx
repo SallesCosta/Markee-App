@@ -12,10 +12,13 @@ export function BtnAdicionar ({ children, onClick }: BtnProps) {
 }
 
 const BtnAddInternal = styled.button`${({ theme }) => css`
-  background: ${theme.colors.primary}
+  background: ${theme.colors.primary};
+  color: ${theme.colors.lightBlack};
   position: absolute;
   width: 268px;
   height: 33.88px;
   left: 32px;
   top: 191px;
+
+
 `}`
