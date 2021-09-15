@@ -15,7 +15,7 @@ body{
 }
  `
 
-function Root() {
+function Root () {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
