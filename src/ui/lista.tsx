@@ -66,49 +66,40 @@ const data: Files[] = [
 
 ]
 
-export function Lista () {
+export function Lista() {
   return (
-    <ListaContainer>
-      <ul>
-        {data.map((item) => (
-          <li key={item.id}>
+    <ul>
+      {data.map((item) => (
+        <li key={item.id}>
+          <ListaContainer>
             <Link href={item.id}>{item.name}</Link>
-          </li>
-        ))}
-      </ul>
-    </ListaContainer>
+          </ListaContainer>
+        </li>
+      ))}
+    </ul>
   )
 }
 
 const LinkInternal = styled.a`${({ theme }) => css`
  color: ${theme.colors.white};
     opacity: 0.65;
-    font-family: 'DM Sans';
     font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px;
-    letter-spacing: -0.02em;
-    text-align: left;
-    margin-left: 40px;
-
-`}`
+      ${ListaContainer}:hover &{
+        opacity: 1;
+  }
+  `}`
 
 const ListaContainer = styled.div`${({ theme }) => css`
-  margin-top: 300px;
-  li {
     height: 37px;
     width: 268px;
     left: 32px;
     top: 336.880615234375px;
     border-radius: 6px;
-
-    &:hover{
+      &:hover{
       background:rgba(255, 255, 255, 0.05);
-    }
-
-
+      }
   }
+
   span {
     color: ${theme.colors.white}
     font-family: 'DM Sans';
