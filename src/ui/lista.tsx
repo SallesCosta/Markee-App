@@ -14,11 +14,11 @@ type ParaLink = {
   href: string,
 }
 
-function Link ({ children, href }: ParaLink) {
+function Link({ children, href }: ParaLink) {
   return (
     <>
-      <LinkInternal href={href}>{children}</LinkInternal>
-      <span>x</span>
+      <LinkInternal href={href}>{children}<span>x</span></LinkInternal>
+
     </>
   )
 }
@@ -66,7 +66,7 @@ const data: Files[] = [
 
 ]
 
-export function Lista() {
+export function Lista () {
   return (
     <ul>
       {data.map((item) => (
@@ -89,26 +89,14 @@ const LinkInternal = styled.a`${({ theme }) => css`
   }
   `}`
 
-const ListaContainer = styled.div`${({ theme }) => css`
+const ListaContainer = styled.div`
     height: 37px;
     width: 268px;
     left: 32px;
-    top: 336.880615234375px;
+    top: 337px;
+    line-height: 31px;
     border-radius: 6px;
       &:hover{
       background:rgba(255, 255, 255, 0.05);
-      }
-  }
-
-  span {
-    color: ${theme.colors.white}
-    font-family: 'DM Sans';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px;
-    letter-spacing: -0.02em;
-    text-align: left;
-    margin-right: 0;
-  }
-`}`
+      };
+`
