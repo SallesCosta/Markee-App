@@ -18,7 +18,6 @@ function Link({ children, href }: ParaLink) {
   return (
     <>
       <LinkInternal href={href}>{children}<span>x</span></LinkInternal>
-
     </>
   )
 }
@@ -68,15 +67,17 @@ const data: Files[] = [
 
 export function Lista () {
   return (
-    <ul>
-      {data.map((item) => (
-        <li key={item.id}>
-          <ListaContainer>
-            <Link href={item.id}>{item.name}</Link>
-          </ListaContainer>
-        </li>
-      ))}
-    </ul>
+    <Wrapper>
+      <ul>
+        {data.map((item) => (
+          <li key={item.id}>
+            <ListaContainer>
+              <Link href={item.id}>{item.name}</Link>
+            </ListaContainer>
+          </li>
+        ))}
+      </ul>
+    </Wrapper>
   )
 }
 
@@ -87,16 +88,23 @@ const LinkInternal = styled.a`${({ theme }) => css`
       ${ListaContainer}:hover &{
         opacity: 1;
   }
+    span {
+      color: red;
+      margin: auto;
+    }
   `}`
 
 const ListaContainer = styled.div`
     height: 37px;
     width: 268px;
     left: 32px;
-    top: 337px;
     line-height: 31px;
     border-radius: 6px;
       &:hover{
       background:rgba(255, 255, 255, 0.05);
       };
+`
+
+const Wrapper = styled.div`
+  margin-top: 300px
 `
