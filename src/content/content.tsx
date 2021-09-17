@@ -1,6 +1,7 @@
+import styled from 'styled-components/macro'
 import * as S from './styled'
 
-export function Content () {
+export function Content() {
   return (
     <>
       <S.ContentInternal>
@@ -14,7 +15,7 @@ export function Content () {
   )
 }
 
-function HeaderContent () {
+function HeaderContent() {
   return (
     <>
       <S.HeaderContentInternal>
@@ -24,7 +25,7 @@ function HeaderContent () {
   )
 }
 
-function SideUm () {
+function SideUm() {
   return (
     <>
       <S.SideUmInternal>
@@ -34,7 +35,7 @@ function SideUm () {
   )
 }
 
-function SideDois () {
+function SideDois() {
   return (
     <>
       <S.SideDoisInternal>
@@ -44,7 +45,7 @@ function SideDois () {
   )
 }
 
-function FooterContent () {
+function FooterContent() {
   return (
     <>
       <S.FooterInternal>
@@ -56,10 +57,15 @@ function FooterContent () {
 
 function NewCapital() {
   const por = '< NewCapital.in >'
-
   return (
     <>
-      <span>feito com MUUUITO ESFORÇO por {por}</span>
+      <span>feito com<Strong> MUUUITO ESFORÇO</Strong> por <Strong>{por}</Strong></span>
     </>
   )
 }
+
+const Strong = styled.strong`
+color: #27551c;
+padding-left: 3px;
+padding-right: 3px;
+`
