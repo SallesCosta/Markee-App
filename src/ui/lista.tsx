@@ -14,7 +14,7 @@ type ParaLink = {
   href: string,
 }
 
-function Link({ children, href }: ParaLink) {
+function Link ({ children, href }: ParaLink) {
   return (
     <>
       <LinkInternal href={href}>{children}<span>x</span></LinkInternal>
