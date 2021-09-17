@@ -92,7 +92,7 @@ const LinkInternal = styled.a`${({ theme }) => css`
       color: red;
       margin: auto;
     }
-  `}`
+`}`
 
 const ListaContainer = styled.div`
     height: 37px;
@@ -100,11 +100,13 @@ const ListaContainer = styled.div`
     left: 32px;
     line-height: 31px;
     border-radius: 6px;
+    list-style-type: none;
+
       &:hover{
       background:rgba(255, 255, 255, 0.05);
       };
 `
 
 const Wrapper = styled.div`
-  margin-top: 300px
+  margin-top: 300px;
 `

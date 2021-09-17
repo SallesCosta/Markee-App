@@ -14,7 +14,12 @@ html {
 body{
   font-family: 'DM Sans', sans-serif;
 }
- `
+
+li {
+  list-style-type: none;
+}
+
+`
 
 function Root () {
   return (

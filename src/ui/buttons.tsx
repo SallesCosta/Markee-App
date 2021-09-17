@@ -21,4 +21,7 @@ const BtnAddInternal = styled.button`${({ theme }) => css`
   left: 32px;
   top: 191px;
   border-radius: 4px;
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
 `}`
