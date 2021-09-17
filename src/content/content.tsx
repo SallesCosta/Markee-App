@@ -50,7 +50,7 @@ function SideUm () {
   return (
     <>
       <SideUmInternal>
-        <textarea value='side 1' />
+        <textarea />
       </SideUmInternal>
     </>
   )
@@ -66,6 +66,9 @@ const SideUmInternal = styled.aside`${({ theme }) => css`
       height: 860px;
       max-width: 100%;
       max-height: 100%;
+      box-shadow: 0 0 0 0;
+      border: 0 none;
+      outline: 0;
       }
 `}`
 
@@ -73,7 +76,7 @@ function SideDois () {
   return (
     <>
       <SideDoisInternal>
-        <textarea value='side 2' />
+        <textarea />
       </SideDoisInternal>
     </>
   )
@@ -87,6 +90,9 @@ const SideDoisInternal = styled(SideUmInternal)`
       height: 860px;
       max-width: 100%;
       max-height: 100%;
+      box-shadow: 0 0 0 0;
+      border: 0 none;
+      outline: 0;
     }
 `
 
