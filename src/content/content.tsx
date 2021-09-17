@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export function Content() {
+export function Content () {
   return (
     <>
       <ContentInternal>
@@ -22,7 +22,7 @@ width: 1588px;
 height: 100%;
 `}`
 
-function HeaderContent() {
+function HeaderContent () {
   return (
     <>
       <HeaderContentInternal>
@@ -46,7 +46,7 @@ const HeaderContentInternal = styled.header`${({ theme }) => css`
     }
 `}`
 
-function SideUm() {
+function SideUm () {
   return (
     <>
       <SideUmInternal>
@@ -58,9 +58,15 @@ function SideUm() {
 
 const SideUmInternal = styled.aside`
     top:100px;
+    bottom: 42px;
     background: #f7f7;
     width: 50%;
     position: absolute;
+    height: auto;
+      textarea {
+        max-width: 100%;
+        max-height: 100%;
+      }
 `
 function SideDois () {
   return (
@@ -80,7 +86,7 @@ const SideDoisInternal = styled.aside`
     margin-left: 50%;
 `
 
-function FooterContent() {
+function FooterContent () {
   return (
     <>
       <FooterInternal>
