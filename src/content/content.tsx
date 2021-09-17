@@ -48,8 +48,18 @@ function FooterContent () {
   return (
     <>
       <S.FooterInternal>
-        <p>feito com <strong>Digital</strong> por <strong>NewCapita.in</strong></p>
+        <NewCapital />
       </S.FooterInternal>
+    </>
+  )
+}
+
+function NewCapital() {
+  const por = '< NewCapital.in >'
+
+  return (
+    <>
+      <span>feito com MUUUITO ESFORÇO por {por}</span>
     </>
   )
 }

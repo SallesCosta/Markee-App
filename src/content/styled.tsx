@@ -48,6 +48,12 @@ export const FooterInternal = styled.footer`${({ theme }) => css`
   height: 42px;
   position: fixed;
   bottom: 0;
+    span {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 20px;
+      font-size: 1.1rem;
+    }
 `}`
 
 export const SideDoisInternal = styled(SideUmInternal)`
