@@ -56,18 +56,19 @@ function SideUm () {
   )
 }
 
-const SideUmInternal = styled.aside`
+const SideUmInternal = styled.aside`${({ theme }) => css`
+    position: relative;
     top:100px;
     bottom: 42px;
-    background: #f7f7;
-    width: 50%;
-    position: absolute;
-    height: auto;
-      textarea {
-        max-width: 100%;
-        max-height: 100%;
+    textarea {
+      width: 50%;
+      background: ${theme.colors.white};
+      height: 860px;
+      max-width: 100%;
+      max-height: 100%;
       }
-`
+`}`
+
 function SideDois () {
   return (
     <>
@@ -78,12 +79,15 @@ function SideDois () {
   )
 }
 
-const SideDoisInternal = styled.aside`
-    top:100px;
-    background: #f8f888;
-    width: 50%;
+const SideDoisInternal = styled(SideUmInternal)`
     position: absolute;
     margin-left: 50%;
+    textarea {
+      width: 794px;
+      height: 860px;
+      max-width: 100%;
+      max-height: 100%;
+    }
 `
 
 function FooterContent () {
