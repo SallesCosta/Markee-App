@@ -14,6 +14,14 @@ export function Content() {
   )
 }
 
+const ContentInternal = styled.aside`${({ theme }) => css`
+background: ${theme.colors.white};
+position: absolute;
+margin-left: 332px;
+width: 1588px;
+height: 100%;
+`}`
+
 function HeaderContent() {
   return (
     <>
@@ -23,14 +31,6 @@ function HeaderContent() {
     </>
   )
 }
-
-const ContentInternal = styled.aside`${({ theme }) => css`
-background: ${theme.colors.white};
-position: absolute;
-margin-left: 332px;
-width: 1588px;
-height: 100%;
-`}`
 
 const HeaderContentInternal = styled.header`${({ theme }) => css`
   background: ${theme.colors.white};
@@ -46,7 +46,7 @@ const HeaderContentInternal = styled.header`${({ theme }) => css`
     }
 `}`
 
-function SideUm () {
+function SideUm() {
   return (
     <>
       <SideUmInternal>
@@ -57,7 +57,10 @@ function SideUm () {
 }
 
 const SideUmInternal = styled.aside`
-background: #f7f7;
+    top:100px;
+    background: #f7f7;
+    width: 50%;
+    position: absolute;
 `
 function SideDois () {
   return (
@@ -70,10 +73,11 @@ function SideDois () {
 }
 
 const SideDoisInternal = styled.aside`
+    top:100px;
     background: #f8f888;
-    width: 744px;
+    width: 50%;
     position: absolute;
-    height: 500px;
+    margin-left: 50%;
 `
 
 function FooterContent() {
