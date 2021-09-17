@@ -89,8 +89,9 @@ const LinkInternal = styled.a`${({ theme }) => css`
         opacity: 1;
   }
     span {
+      display: flex;
+      justify-content: flex-end;
       color: red;
-      margin: auto;
     }
 `}`
 
@@ -100,7 +101,6 @@ const ListaContainer = styled.div`
     left: 32px;
     line-height: 31px;
     border-radius: 6px;
-    list-style-type: none;
 
       &:hover{
       background:rgba(255, 255, 255, 0.05);

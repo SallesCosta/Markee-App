@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components/macro'
 import { BtnAdicionar } from '../ui/buttons'
-import { Lista } from 'ui/lista'
+import { Lista } from './lista'
 
 export function Sidebar () {
   return (
