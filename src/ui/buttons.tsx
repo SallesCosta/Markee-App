@@ -7,7 +7,7 @@ type BtnProps = {
   onClick?: () => void | null
 }
 
-export function BtnAdicionar({ children, onClick }: BtnProps) {
+export function BtnAdicionar ({ children, onClick }: BtnProps) {
   return <BtnContainer><BtnAddInternal onClick={onClick}><PAdicionar texto={children} /></BtnAddInternal></BtnContainer>
 }
 
