@@ -7,12 +7,16 @@ type BtnProps = {
   onClick?: () => void | null
 }
 
-export function BtnAdicionar ({ children, onClick }: BtnProps) {
-  return <BtnAddInternal onClick={onClick}><PAdicionar texto={children} /></BtnAddInternal>
+export function BtnAdicionar({ children, onClick }: BtnProps) {
+  return <BtnContainer><BtnAddInternal onClick={onClick}><PAdicionar texto={children} /></BtnAddInternal></BtnContainer>
 }
 
-const BtnAddInternal = styled.button`${({ theme }) => css`
+const BtnContainer = styled.div`${({ theme }) => css`
+   & :hover{
+      background: ${theme.colors.primaryDark};
+      `}`
 
+const BtnAddInternal = styled.button`${({ theme }) => css`
   background: ${theme.colors.primary};
   color: ${theme.colors.lightBlack};
   cursor: pointer;
@@ -31,9 +35,4 @@ const BtnAddInternal = styled.button`${({ theme }) => css`
   display: flex;
   margin-bottom: 32px;
   padding: 8px 0;
-  transition: background 0.15s ease-in-out;
-
-   & :hover{
-      background: ${theme.colors.primaryDark};
-      }
 `}`
