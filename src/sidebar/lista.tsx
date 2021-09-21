@@ -1,12 +1,15 @@
 import { ReactNode } from 'react'
 import styled, { css } from 'styled-components/macro'
+import { HeaderSide } from './header-Sidebar'
+
+type Status= 'editing' | 'saving' | 'saved'
 
 type Files = {
   id: string
   name: string
   content: string
   active: boolean
-  status: 'editing' | 'saving' | 'saved'
+  status: Status
 }
 
 type ParaLink = {
@@ -14,7 +17,7 @@ type ParaLink = {
   href: string,
 }
 
-function Link ({ children, href }: ParaLink) {
+function Link({ children, href }: ParaLink) {
   return (
     <>
       <LinkInternal href={href}>{children}<span>x</span></LinkInternal>
@@ -65,8 +68,10 @@ const data: Files[] = [
 
 ]
 
-export function Lista () {
+export function Lista() {
   return (
+<>
+    <HeaderSide />
     <Wrapper>
       <ul>
         {data.map((item) => (
@@ -78,6 +83,7 @@ export function Lista () {
         ))}
       </ul>
     </Wrapper>
+          </>
   )
 }
 
@@ -108,5 +114,5 @@ const ListaContainer = styled.div`
 `
 
 const Wrapper = styled.div`
-  margin-top: 300px;
+  margin-top: 252px;
 `
