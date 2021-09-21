@@ -80,7 +80,7 @@ export function Lista () {
           {data.map((item) => (
             <li key={item.id}>
               <ListaContainer>
-                <Link href={item.id}>{item.name}</Link>
+                <Link href={item.id} >{item.name}</Link>
               </ListaContainer>
             </li>
           ))}
