@@ -17,7 +17,7 @@ type ParaLink = {
   href: string,
 }
 
-function Link({ children, href }: ParaLink) {
+function Link ({ children, href }: ParaLink) {
   return (
     <>
       <LinkInternal href={href}>{children}<span>x</span></LinkInternal>
@@ -68,22 +68,22 @@ const data: Files[] = [
 
 ]
 
-export function Lista() {
+export function Lista () {
   return (
-<>
-    <HeaderSide />
-    <Wrapper>
-      <ul>
-        {data.map((item) => (
-          <li key={item.id}>
-            <ListaContainer>
-              <Link href={item.id}>{item.name}</Link>
-            </ListaContainer>
-          </li>
-        ))}
-      </ul>
-    </Wrapper>
-          </>
+    <>
+      <HeaderSide />
+      <Wrapper>
+        <ul>
+          {data.map((item) => (
+            <li key={item.id}>
+              <ListaContainer>
+                <Link href={item.id}>{item.name}</Link>
+              </ListaContainer>
+            </li>
+          ))}
+        </ul>
+      </Wrapper>
+    </>
   )
 }
 

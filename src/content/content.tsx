@@ -29,7 +29,7 @@ function SideUm () {
   return (
     <>
       <S.SideUmInternal>
-        <textarea placeholder='conta aí...'/>
+        <textarea placeholder='conta aí...' />
       </S.SideUmInternal>
     </>
   )
