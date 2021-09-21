@@ -1,8 +1,9 @@
 import { ReactNode } from 'react'
 import styled, { css } from 'styled-components/macro'
 import { HeaderSide } from './header-Sidebar'
+import * as I from 'ui/assets'
 
-type Status= 'editing' | 'saving' | 'saved'
+export type Status= 'editing' | 'saving' | 'saved'
 
 type Files = {
   id: string
@@ -20,7 +21,7 @@ type ParaLink = {
 function Link ({ children, href }: ParaLink) {
   return (
     <>
-      <LinkInternal href={href}>{children}<span>x</span></LinkInternal>
+      <LinkInternal href={href}><I.File />{children}</LinkInternal>
     </>
   )
 }
@@ -72,6 +73,8 @@ export function Lista () {
   return (
     <>
       <HeaderSide />
+      <H2><span>Arquivos</span></H2>
+
       <Wrapper>
         <ul>
           {data.map((item) => (
@@ -107,6 +110,7 @@ const ListaContainer = styled.div`
     left: 32px;
     line-height: 31px;
     border-radius: 6px;
+    display: flex;
 
       &:hover{
       background:rgba(255, 255, 255, 0.05);
@@ -114,5 +118,33 @@ const ListaContainer = styled.div`
 `
 
 const Wrapper = styled.div`
-  margin-top: 252px;
+  margin-top: 100px;
 `
+
+const H2 = styled.h2`${({ theme }) => css`
+  color: ${theme.colors.white};
+  font-size: 1.6rem;
+  position: relative;
+  padding-left: 20px;
+  margin: 40px 0 32px;
+  span {
+    background-color: ${theme.colors.black};
+    display: inline-block;
+    position: relative;
+    padding: 0 10px;
+    z-index: 1;
+  }
+  &::before {
+    background: ${theme.colors.primary};
+    border-radius: 2px;
+    content: '';
+    display: block;
+    height: 2px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 0;
+  }
+`}`
