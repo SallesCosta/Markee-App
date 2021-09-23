@@ -19,6 +19,10 @@ li {
   list-style-type: none;
 }
 
+textarea {
+  resize: none;
+}
+
 `
 
 function Root () {

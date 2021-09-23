@@ -1,9 +1,8 @@
-import { ReactNode } from 'react'
 import styled, { css } from 'styled-components/macro'
 import { HeaderSide } from './header-Sidebar'
-import * as I from 'ui/assets'
+import * as S from './sidebar-styles'
 
-export type Status= 'editing' | 'saving' | 'saved'
+export type Status = 'editing' | 'saving' | 'saved'
 
 type Files = {
   id: string
@@ -11,19 +10,6 @@ type Files = {
   content: string
   active: boolean
   status: Status
-}
-
-type ParaLink = {
-  children: ReactNode | ReactNode[],
-  href: string,
-}
-
-function Link ({ children, href }: ParaLink) {
-  return (
-    <>
-      <LinkInternal href={href}><I.File />{children}</LinkInternal>
-    </>
-  )
 }
 
 const data: Files[] = [
@@ -76,46 +62,27 @@ export function Lista () {
       <H2><span>Arquivos</span></H2>
 
       <Wrapper>
-        <ul>
-          {data.map((item) => (
-            <li key={item.id}>
-              <ListaContainer>
-                <Link href={item.id} >{item.name}</Link>
-              </ListaContainer>
-            </li>
+        <S.FileList>
+          {data.map(data => (
+            <S.FileListItem key={data.id}>
+              <S.FileItemLink href={`${data.id}`} active={data.active}>
+                {data.name}
+              </S.FileItemLink>
+
+              {data.active && <S.StatusIconStyled status={data.status} />}
+
+              {!data.active && (
+                <S.RemoveButton title={`Remover o arquivo ${data.name}`}>
+                  <S.RemoveIcon />
+                </S.RemoveButton>
+              )}
+            </S.FileListItem>
           ))}
-        </ul>
+        </S.FileList>
       </Wrapper>
     </>
   )
 }
-
-const LinkInternal = styled.a`${({ theme }) => css`
- color: ${theme.colors.white};
-    opacity: 0.65;
-    font-size: 16px;
-      ${ListaContainer}:hover &{
-        opacity: 1;
-  }
-    span {
-      display: flex;
-      justify-content: flex-end;
-      color: red;
-    }
-`}`
-
-const ListaContainer = styled.div`
-    height: 37px;
-    width: 268px;
-    left: 32px;
-    line-height: 31px;
-    border-radius: 6px;
-    display: flex;
-
-      &:hover{
-      background:rgba(255, 255, 255, 0.05);
-      };
-`
 
 const Wrapper = styled.div`
   margin-top: 100px;
