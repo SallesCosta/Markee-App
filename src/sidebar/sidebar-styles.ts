@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/macro'
-import * as icon from '../ui/assets'
+import * as I from '../ui/assets'
 import { StatusIcon, StatusIconProps } from './status-icon'
 
 export const Aside = styled.aside`
@@ -13,34 +13,6 @@ export const H1 = styled.h1`
   margin: 0;
   text-align: center;
 `
-
-export const H2 = styled.h2`${({ theme }) => css`
-  color: ${theme.colors.white};
-  font-size: 1.6rem;
-  position: relative;
-  padding-left: 20px;
-  margin: 40px 0 32px;
-  span {
-    background-color: ${theme.colors.black};
-    display: inline-block;
-    position: relative;
-    padding: 0 10px;
-    z-index: 1;
-  }
-  &::before {
-    background: ${theme.colors.primary};
-    border-radius: 2px;
-    content: '';
-    display: block;
-    height: 2px;
-    left: 0;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    z-index: 0;
-  }
-`}`
 
 export const Img = styled.img`
   display: inline-block;
@@ -89,8 +61,7 @@ export const StatusIconStyled = styled(StatusIcon)<StatusIconProps>`${({ status 
   transform: translateY(-50%);
 `}`
 
-export const RemoveButton = styled(DefaultButton)`
-  background: transparent;
+export const RemoveButton = styled(DefaultButton)`${({ theme }) => css`
   border: 0;
   display: none;
   margin: 0 0 0 auto;
@@ -100,11 +71,11 @@ export const RemoveButton = styled(DefaultButton)`
   top: 50%;
   transform: translateY(-50%);
   width: 12px;
-`
+  background: ${theme.colors.lightBlack};
+`}`
 
-export const RemoveIcon = styled(icon.Plus)`
+export const RemoveIcon = styled(I.Plus)`
   margin: 0;
-  transform: rotate(45deg);
 `
 
 type FileItemLinkProps = {
@@ -112,7 +83,7 @@ type FileItemLinkProps = {
 }
 
 export const FileItemLink = styled.a<FileItemLinkProps>`${({ theme, active }) => css`
-  background: url("${active ? icon.FileActiveUrl : icon.FileUrl}") 10px calc(50% - 2px) no-repeat;
+  background: url("${active ? I.FileActiveUrl : I.FileUrl}") 10px calc(50% - 2px) no-repeat;
   align-items: center;
   border-radius: 4px;
   color: ${theme.colors.white};

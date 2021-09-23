@@ -15,25 +15,25 @@ type Files = {
 const data: Files[] = [
   {
     id: '1',
-    name: 'README.md',
+    name: 'savED README.md',
     content: '',
-    active: false,
+    active: true,
     status: 'saved',
   },
 
   {
     id: '2',
-    name: 'CONTRIBUTING.md',
+    name: 'editCONTRIBUTING.md',
     content: '',
-    active: true,
+    active: false,
     status: 'editing',
   },
 
   {
     id: '3',
-    name: 'LICENSE.md',
+    name: 'savingLICENSE.md',
     content: '',
-    active: true,
+    active: false,
     status: 'saving',
   },
 
@@ -49,8 +49,8 @@ const data: Files[] = [
     id: '5',
     name: 'roadmap.md',
     content: '',
-    active: true,
-    status: 'editing',
+    active: false,
+    status: 'saved',
   },
 
 ]
@@ -60,7 +60,6 @@ export function Lista () {
     <>
       <HeaderSide />
       <H2><span>Arquivos</span></H2>
-
       <Wrapper>
         <S.FileList>
           {data.map(data => (
@@ -87,7 +86,6 @@ export function Lista () {
 const Wrapper = styled.div`
   margin-top: 100px;
   padding: 32px;
-
 `
 
 const H2 = styled.h2`${({ theme }) => css`
