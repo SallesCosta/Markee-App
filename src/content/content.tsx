@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { OutroH1, WrapperSideDois, P } from 'ui/titulos'
 import * as S from './styled'
 
 export function Content () {
@@ -39,7 +40,10 @@ function SideDois () {
   return (
     <>
       <S.SideDoisInternal>
-        <div />
+        <WrapperSideDois>
+          <OutroH1 texto='Bootcamp Brainn Co.' />
+          <P>Loren ipsum</P>
+        </WrapperSideDois>
       </S.SideDoisInternal>
     </>
   )
@@ -55,11 +59,11 @@ function FooterContent () {
   )
 }
 
-function NewCapital () {
-  const por = '< NewCapital.in >'
+function NewCapital() {
+  const nc = '< NewCapital.in >'
   return (
     <>
-      <span>feito com<Strong> MUUUITO ESFORÇO</Strong> por <Strong>{por}</Strong></span>
+      <span>feito com<Strong> MUUUITO ESFORÇO</Strong> por <Strong>{nc}</Strong></span>
     </>
   )
 }

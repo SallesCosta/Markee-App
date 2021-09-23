@@ -15,7 +15,7 @@ type Files = {
 const data: Files[] = [
   {
     id: '1',
-    name: 'savED README.md',
+    name: 'README.md',
     content: '',
     active: true,
     status: 'saved',
@@ -23,7 +23,7 @@ const data: Files[] = [
 
   {
     id: '2',
-    name: 'editCONTRIBUTING.md',
+    name: 'CONTRIBUTING.md',
     content: '',
     active: false,
     status: 'editing',
@@ -31,7 +31,7 @@ const data: Files[] = [
 
   {
     id: '3',
-    name: 'savingLICENSE.md',
+    name: 'LICENSE.md',
     content: '',
     active: false,
     status: 'saving',
