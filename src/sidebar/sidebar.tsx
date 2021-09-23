@@ -13,9 +13,9 @@ export function Sidebar () {
 
 const SidebarInternal = styled.aside`${({ theme }) => css`
 background: ${theme.colors.black};
-  width:332px;
+min-width: 332px;
+  max-width: 332px;
   height:100%;
   position: absolute;
-  left: 0;
-  top: 0;
+ 
 `}`

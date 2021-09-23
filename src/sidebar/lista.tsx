@@ -86,6 +86,8 @@ export function Lista () {
 
 const Wrapper = styled.div`
   margin-top: 100px;
+  padding: 32px;
+
 `
 
 const H2 = styled.h2`${({ theme }) => css`

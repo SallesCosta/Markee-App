@@ -7,7 +7,7 @@ export type StatusIconProps = {
   className?: string
 }
 
-export function StatusIcon ({ status = 'saved', className }: StatusIconProps) {
+export function StatusIcon ({ status = 'editing', className }: StatusIconProps) {
   const Comp = {
     saving: Loading,
     saved: I.Check,
