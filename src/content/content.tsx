@@ -34,7 +34,7 @@ function HeaderContent () {
   return (
     <>
       <S.HeaderContentInternal>
-        <Input type='text' name='name' placeholder='file name..' />
+        <Input type='text' name='name' placeholder='file name..'/>
       </S.HeaderContentInternal>
     </>
   )
