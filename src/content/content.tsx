@@ -2,8 +2,7 @@ import { ChangeEvent, useState } from 'react'
 import styled from 'styled-components/macro'
 import { OutroH1, WrapperSides, P } from 'ui/titulos'
 import * as S from './styled'
-
-
+import marked from 'marked'
 
 export function Content() {
   return (
@@ -28,7 +27,7 @@ function HeaderContent() {
   )
 }
 
-function ContentText () {
+function ContentText() {
   const [content, setContent] = useState('')
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -48,7 +47,7 @@ function ContentText () {
       <S.SideDoisInternal>
         <WrapperSides>
           <OutroH1 texto='Bootcamp Brainn Co.' />
-          <P>{content}</P>
+          <P dangerouslySetInnerHTML={{ __html:  marked(content)  }} />
         </WrapperSides>
       </S.SideDoisInternal>
     </>
