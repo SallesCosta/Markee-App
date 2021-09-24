@@ -3,7 +3,20 @@ import styled from 'styled-components/macro'
 import { OutroH1, WrapperSides, P } from 'ui/titulos'
 import * as S from './styled'
 import marked from 'marked'
+import 'highlight.js/styles/github.css'
 
+import('highlight.js').then(hljs => {
+  const h = hljs.default
+
+  marked.setOptions({
+    highlight: (code, language) => {
+      if (language && h.getLanguage(language)) {
+        return h.highlight(code, { language }).value
+      }
+      return h.highlightAuto(code).value
+    },
+  })
+})
 export function Content () {
   return (
     <>
@@ -27,7 +40,7 @@ function HeaderContent () {
   )
 }
 
-function ContentText () {
+function ContentText() {
   const [content, setContent] = useState('')
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -54,7 +67,7 @@ function ContentText () {
   )
 }
 
-function FooterContent () {
+function FooterContent() {
   return (
     <>
       <S.FooterInternal>
@@ -64,7 +77,7 @@ function FooterContent () {
   )
 }
 
-function NewCapital () {
+function NewCapital() {
   const nc = '< NewCapital.in >'
   return (
     <>
