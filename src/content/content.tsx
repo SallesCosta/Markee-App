@@ -1,14 +1,16 @@
+import { ChangeEvent, useState } from 'react'
 import styled from 'styled-components/macro'
 import { OutroH1, WrapperSides, P } from 'ui/titulos'
 import * as S from './styled'
 
-export function Content () {
+
+
+export function Content() {
   return (
     <>
       <S.ContentInternal>
         <HeaderContent />
-        <SideUm />
-        <SideDois />
+        <ContentText />
         <FooterContent />
       </S.ContentInternal>
       )
@@ -16,7 +18,7 @@ export function Content () {
   )
 }
 
-function HeaderContent () {
+function HeaderContent() {
   return (
     <>
       <S.HeaderContentInternal>
@@ -26,32 +28,34 @@ function HeaderContent () {
   )
 }
 
-function SideUm () {
+function ContentText () {
+  const [content, setContent] = useState('')
+
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setContent(e.target.value)
+  }
   return (
     <>
       <S.SideUmInternal>
         <WrapperSides>
-          <textarea placeholder='conta aí...' />
+          <S.Textarea
+            placeholder='conta aí...'
+            value={content}
+            onChange={handleChange}
+          />
         </WrapperSides>
       </S.SideUmInternal>
-    </>
-  )
-}
-
-function SideDois () {
-  return (
-    <>
       <S.SideDoisInternal>
         <WrapperSides>
           <OutroH1 texto='Bootcamp Brainn Co.' />
-          <P>Loren ipsum</P>
+          <P>{content}</P>
         </WrapperSides>
       </S.SideDoisInternal>
     </>
   )
 }
 
-function FooterContent () {
+function FooterContent() {
   return (
     <>
       <S.FooterInternal>
@@ -61,7 +65,7 @@ function FooterContent () {
   )
 }
 
-function NewCapital () {
+function NewCapital() {
   const nc = '< NewCapital.in >'
   return (
     <>

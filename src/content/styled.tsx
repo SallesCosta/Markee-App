@@ -25,12 +25,14 @@ export const HeaderContentInternal = styled.header`${({ theme }) => css`
     }
 `}`
 
-export const SideUmInternal = styled.aside`${({ theme }) => css`
+export const SideUmInternal = styled.aside`
   position: relative;
   top:100px;
   bottom: 42px;
-  textarea {
-    width: 50%;
+`
+
+export const Textarea = styled.textarea`${({ theme }) => css`
+  width: 50%;
     background: ${theme.colors.white};
     height: 860px;
     max-width: 100%;
@@ -39,15 +41,13 @@ export const SideUmInternal = styled.aside`${({ theme }) => css`
     border: 0 none;
     outline: 0;
     color: ${theme.colors.lightBlack};
-      font-family: 'DM Sans';
-      font-size: 18px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 23px;
-      letter-spacing: 0em;
-      text-align: left;
-
-    }
+    font-family: 'DM Sans';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0em;
+    text-align: left;
 `}`
 
 export const FooterInternal = styled.footer`${({ theme }) => css`

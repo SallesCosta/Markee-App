@@ -55,7 +55,7 @@ const data: Files[] = [
 
 ]
 
-export function Lista() {
+export function Lista () {
   return (
     <>
       <HeaderSide />
