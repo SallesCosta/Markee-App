@@ -2,7 +2,7 @@ import styled from 'styled-components/macro'
 import { OutroH1, WrapperSides, P } from 'ui/titulos'
 import * as S from './styled'
 
-export function Content() {
+export function Content () {
   return (
     <>
       <S.ContentInternal>
@@ -16,7 +16,7 @@ export function Content() {
   )
 }
 
-function HeaderContent() {
+function HeaderContent () {
   return (
     <>
       <S.HeaderContentInternal>
@@ -26,11 +26,11 @@ function HeaderContent() {
   )
 }
 
-function SideUm() {
+function SideUm () {
   return (
     <>
       <S.SideUmInternal>
-        <WrapperSides>g 
+        <WrapperSides>g
           <textarea placeholder='conta aí...' />
         </WrapperSides>
       </S.SideUmInternal>
@@ -38,7 +38,7 @@ function SideUm() {
   )
 }
 
-function SideDois() {
+function SideDois () {
   return (
     <>
       <S.SideDoisInternal>
@@ -51,7 +51,7 @@ function SideDois() {
   )
 }
 
-function FooterContent() {
+function FooterContent () {
   return (
     <>
       <S.FooterInternal>
@@ -61,7 +61,7 @@ function FooterContent() {
   )
 }
 
-function NewCapital() {
+function NewCapital () {
   const nc = '< NewCapital.in >'
   return (
     <>
