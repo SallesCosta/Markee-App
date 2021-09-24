@@ -34,13 +34,23 @@ function HeaderContent () {
   return (
     <>
       <S.HeaderContentInternal>
-        <input placeholder='CONTRIBUTE' />
+        <Input type='text' name='name' placeholder='file name..' />
       </S.HeaderContentInternal>
     </>
   )
 }
 
-function ContentText() {
+type InputProps = {
+  type: string;
+  name: string;
+  placeholder?: string;
+}
+
+function Input ({ type, name, placeholder }: InputProps) {
+  return <input type={type} name={name} placeholder={placeholder} />
+}
+
+function ContentText () {
   const [content, setContent] = useState('')
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -67,7 +77,7 @@ function ContentText() {
   )
 }
 
-function FooterContent() {
+function FooterContent () {
   return (
     <>
       <S.FooterInternal>
@@ -77,7 +87,7 @@ function FooterContent() {
   )
 }
 
-function NewCapital() {
+function NewCapital () {
   const nc = '< NewCapital.in >'
   return (
     <>

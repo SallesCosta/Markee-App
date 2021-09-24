@@ -17,5 +17,5 @@ min-width: 332px;
   max-width: 332px;
   height:100%;
   position: absolute;
- 
+
 `}`
