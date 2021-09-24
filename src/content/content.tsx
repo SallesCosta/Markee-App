@@ -4,7 +4,7 @@ import { OutroH1, WrapperSides, P } from 'ui/titulos'
 import * as S from './styled'
 import marked from 'marked'
 
-export function Content() {
+export function Content () {
   return (
     <>
       <S.ContentInternal>
@@ -17,7 +17,7 @@ export function Content() {
   )
 }
 
-function HeaderContent() {
+function HeaderContent () {
   return (
     <>
       <S.HeaderContentInternal>
@@ -27,7 +27,7 @@ function HeaderContent() {
   )
 }
 
-function ContentText() {
+function ContentText () {
   const [content, setContent] = useState('')
 
   const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -47,14 +47,14 @@ function ContentText() {
       <S.SideDoisInternal>
         <WrapperSides>
           <OutroH1 texto='Bootcamp Brainn Co.' />
-          <P dangerouslySetInnerHTML={{ __html:  marked(content)  }} />
+          <P dangerouslySetInnerHTML={{ __html: marked(content) }} />
         </WrapperSides>
       </S.SideDoisInternal>
     </>
   )
 }
 
-function FooterContent() {
+function FooterContent () {
   return (
     <>
       <S.FooterInternal>
@@ -64,7 +64,7 @@ function FooterContent() {
   )
 }
 
-function NewCapital() {
+function NewCapital () {
   const nc = '< NewCapital.in >'
   return (
     <>
