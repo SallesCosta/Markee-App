@@ -38,6 +38,15 @@ export const SideUmInternal = styled.aside`${({ theme }) => css`
     box-shadow: 0 0 0 0;
     border: 0 none;
     outline: 0;
+    color: ${theme.colors.lightBlack};
+      font-family: 'DM Sans';
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 23px;
+      letter-spacing: 0em;
+      text-align: left;
+
     }
 `}`
 

@@ -1,8 +1,8 @@
 import styled from 'styled-components/macro'
-import { OutroH1, WrapperSideDois, P } from 'ui/titulos'
+import { OutroH1, WrapperSides, P } from 'ui/titulos'
 import * as S from './styled'
 
-export function Content () {
+export function Content() {
   return (
     <>
       <S.ContentInternal>
@@ -16,7 +16,7 @@ export function Content () {
   )
 }
 
-function HeaderContent () {
+function HeaderContent() {
   return (
     <>
       <S.HeaderContentInternal>
@@ -26,30 +26,32 @@ function HeaderContent () {
   )
 }
 
-function SideUm () {
+function SideUm() {
   return (
     <>
       <S.SideUmInternal>
-        <textarea placeholder='conta aí...' />
+        <WrapperSides>g 
+          <textarea placeholder='conta aí...' />
+        </WrapperSides>
       </S.SideUmInternal>
     </>
   )
 }
 
-function SideDois () {
+function SideDois() {
   return (
     <>
       <S.SideDoisInternal>
-        <WrapperSideDois>
+        <WrapperSides>
           <OutroH1 texto='Bootcamp Brainn Co.' />
           <P>Loren ipsum</P>
-        </WrapperSideDois>
+        </WrapperSides>
       </S.SideDoisInternal>
     </>
   )
 }
 
-function FooterContent () {
+function FooterContent() {
   return (
     <>
       <S.FooterInternal>
