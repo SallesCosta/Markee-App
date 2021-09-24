@@ -55,7 +55,7 @@ const data: Files[] = [
 
 ]
 
-export function Lista () {
+export function Lista() {
   return (
     <>
       <HeaderSide />
@@ -84,9 +84,9 @@ export function Lista () {
 }
 
 const Wrapper = styled.div`
-  margin-top: 100px;
-  padding: 32px;
-`
+      margin-top: 100px;
+      padding: 32px;
+      `
 
 const H2 = styled.h2`${({ theme }) => css`
   color: ${theme.colors.white};

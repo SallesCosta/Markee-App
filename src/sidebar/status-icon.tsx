@@ -33,3 +33,9 @@ const rotation = keyframes`
 const Loading = styled(I.Loading)`
   animation: ${rotation} 1s infinite linear;
 `
+
+// export function Verification ({ status }:StatusIconProps) {
+//   if (status === 'saved') return <I.Check />
+//   if (status === 'saving') return <I.Loading />
+//   if (status === 'editing') return <I.Ellipse />
+// }

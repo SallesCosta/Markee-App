@@ -30,7 +30,7 @@ function SideUm () {
   return (
     <>
       <S.SideUmInternal>
-        <WrapperSides>g
+        <WrapperSides>
           <textarea placeholder='conta aí...' />
         </WrapperSides>
       </S.SideUmInternal>
