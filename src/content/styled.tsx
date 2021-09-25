@@ -84,3 +84,18 @@ export const SideDoisInternal = styled(SideUmInternal)`
       border-left: 2px solid rgba(30, 41, 59, 0.12);
     }
 `
+
+export function NewCapital() {
+  const nc = '< NewCapital.in >'
+  return (
+    <>
+      <span>feito com<Strong> MUUUITO ESFORÇO</Strong> por <Strong>{nc}</Strong></span>
+    </>
+  )
+}
+
+export const Strong = styled.strong`
+  color: #27551c;
+  padding-left: 3px;
+  padding-right: 3px;
+  `

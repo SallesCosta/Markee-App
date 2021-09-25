@@ -1,5 +1,4 @@
 import { ChangeEvent, useState, RefObject } from 'react'
-import styled from 'styled-components/macro'
 import { OutroH1, WrapperSides, P } from 'ui/titulos'
 import * as S from './styled'
 import marked from 'marked'
@@ -76,23 +75,8 @@ function FooterContent () {
   return (
     <>
       <S.FooterInternal>
-        <NewCapital />
+        <S.NewCapital />
       </S.FooterInternal>
     </>
   )
 }
-
-function NewCapital () {
-  const nc = '< NewCapital.in >'
-  return (
-    <>
-      <span>feito com<Strong> MUUUITO ESFORÇO</Strong> por <Strong>{nc}</Strong></span>
-    </>
-  )
-}
-
-const Strong = styled.strong`
-color: #27551c;
-padding-left: 3px;
-padding-right: 3px;
-`
