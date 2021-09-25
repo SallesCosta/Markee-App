@@ -85,7 +85,7 @@ export const SideDoisInternal = styled(SideUmInternal)`
     }
 `
 
-export function NewCapital() {
+export function NewCapital () {
   const nc = '< NewCapital.in >'
   return (
     <>

@@ -18,6 +18,11 @@ type Files = {
   status: Status
 }
 
+// function MajIcon ({inputRef}) {
+//   const [status, setStatus] = useState('')
+//   (inputRef.focus)
+// }
+
 export function Sidebar ({ inputRef }: SidebarProps) {
   const [files, setFiles] = useState<Files[]>([])
 
