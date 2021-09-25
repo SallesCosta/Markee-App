@@ -19,7 +19,7 @@ type Files = {
   status: Status
 }
 
-export function Sidebar({ inputRef }: SidebarProps) {
+export function Sidebar ({ inputRef }: SidebarProps) {
   const [files, setFiles] = useState<Files[]>([])
 
   const AddNewFile = () => {
@@ -41,7 +41,7 @@ export function Sidebar({ inputRef }: SidebarProps) {
 
   const RemoveFile = (id: string) => {
     setFiles(prevState => prevState.filter(file => file.id !== id))
-    console.log('excluiu arquivo: ')
+    console.log('excluiu arquivo: ', id)
   }
 
   return (
@@ -61,7 +61,7 @@ export function Sidebar({ inputRef }: SidebarProps) {
 
               {!file.active && (
                 <S.RemoveButton title={`Remover o arquivo ${file.name}`}>
-                  <S.RemoveIcon onClick={()=>RemoveFile(file.id)} />
+                  <S.RemoveIcon onClick={() => RemoveFile(file.id)} />
                 </S.RemoveButton>
               )}
             </S.FileListItem>
