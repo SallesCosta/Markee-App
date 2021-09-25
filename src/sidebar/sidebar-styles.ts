@@ -21,12 +21,8 @@ export const Img = styled.img`
 export const LogoLink = styled.a`
   display: block;
 `
-
-const DefaultButton = styled.button`
+export const Button = styled.button`${({ theme }) => css`
   cursor: pointer;
-`
-
-export const Button = styled(DefaultButton)`${({ theme }) => css`
   align-items: center;
   background: ${theme.colors.primary};
   border: 0;
@@ -61,7 +57,8 @@ export const StatusIconStyled = styled(StatusIcon)<StatusIconProps>`${({ status 
   transform: translateY(-50%);
 `}`
 
-export const RemoveButton = styled(DefaultButton)`${({ theme }) => css`
+export const RemoveButton = styled.button`${({ theme }) => css`
+  cursor: pointer;
   border: 0;
   display: none;
   margin: 0 0 0 auto;
