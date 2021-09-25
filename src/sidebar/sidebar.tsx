@@ -1,9 +1,13 @@
 import styled, { css } from 'styled-components/macro'
 import { BtnAdicionar } from '../ui/buttons'
 import { v4 as uuidv4 } from 'uuid'
-import { useState } from 'react'
+import { useState, RefObject } from 'react'
 import * as S from './sidebar-styles'
 import { HeaderSide } from './header-Sidebar'
+
+type SidebarProps = {
+  inputRef: RefObject<HTMLInputElement>
+}
 
 export type Status = 'editing' | 'saving' | 'saved'
 
@@ -15,10 +19,12 @@ type Files = {
   status: Status
 }
 
-export function Sidebar () {
+export function Sidebar ({ inputRef }: SidebarProps) {
   const [files, setFiles] = useState<Files[]>([])
 
   const AddNewFile = () => {
+    inputRef.current?.focus()
+
     setFiles(files => files
       .map(file => ({
         ...file,
@@ -32,7 +38,6 @@ export function Sidebar () {
         status: 'saved',
       }))
   }
-
 
   return (
     <SidebarInternal>
@@ -70,7 +75,6 @@ min-width: 332px;
   position: absolute;
 
 `}`
-
 
 const Wrapper = styled.div`
       margin-top: 100px;

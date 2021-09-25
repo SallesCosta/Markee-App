@@ -1,4 +1,4 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useState, RefObject } from 'react'
 import styled from 'styled-components/macro'
 import { OutroH1, WrapperSides, P } from 'ui/titulos'
 import * as S from './styled'
@@ -17,11 +17,16 @@ import('highlight.js').then(hljs => {
     },
   })
 })
-export function Content () {
+
+type ContentProps = {
+  inputRef: RefObject<HTMLInputElement>
+}
+
+export function Content ({ inputRef }: ContentProps) {
   return (
     <>
       <S.ContentInternal>
-        <HeaderContent />
+        <HeaderContent inputRef={inputRef} />
         <ContentText />
         <FooterContent />
       </S.ContentInternal>
@@ -30,24 +35,14 @@ export function Content () {
   )
 }
 
-function HeaderContent () {
+function HeaderContent ({ inputRef }: ContentProps) {
   return (
     <>
       <S.HeaderContentInternal>
-        <Input type='text' name='name' placeholder='file name..'/>
+        <S.Input ref={inputRef} placeholder='file name..' />
       </S.HeaderContentInternal>
     </>
   )
-}
-
-type InputProps = {
-  type: string;
-  name: string;
-  placeholder?: string;
-}
-
-function Input ({ type, name, placeholder }: InputProps) {
-  return <input type={type} name={name} placeholder={placeholder} />
 }
 
 function ContentText () {

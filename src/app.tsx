@@ -1,11 +1,13 @@
+import { useRef } from 'react'
 import { Content } from './content/content'
 import { Sidebar } from './sidebar/sidebar'
 
 function App () {
+  const inputRef = useRef<HTMLInputElement>(null)
   return (
     <>
-      <Sidebar />
-      <Content />
+      <Sidebar inputRef={inputRef} />
+      <Content inputRef={inputRef} />
     </>
   )
 }
