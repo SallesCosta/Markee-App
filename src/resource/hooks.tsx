@@ -68,6 +68,13 @@ export function useFiles () {
     getFromStorage()
   }, [])
 
+  useEffect(() => {
+    const selectedFile = files.find(file => file.active === true)
+    if (selectedFile) {
+      window.history.replaceState(null, '', `/file/${selectedFile.id}`)
+    }
+  }, [files])
+
   const AddNewFile = () => {
     inputRef.current?.focus()
 
