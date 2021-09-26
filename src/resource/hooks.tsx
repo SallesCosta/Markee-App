@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect, ChangeEvent, MouseEvent } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { Files } from '../sidebar/sidebar'
+import localforage from 'localforage'
 
 export function useFiles () {
   const inputRef = useRef<HTMLInputElement>(null)
@@ -47,6 +48,25 @@ export function useFiles () {
 
     return () => clearTimeout(timer)
   }, [files])
+
+  useEffect(() => {
+    localforage.setItem('Markee App', files)
+  }, [files])
+
+  useEffect(() => {
+    async function getFromStorage () {
+      const files = await localforage.getItem<Files[]>('Markee App')
+
+      if (files) {
+        setFiles(files)
+        return
+      }
+
+      AddNewFile()
+    }
+
+    getFromStorage()
+  }, [])
 
   const AddNewFile = () => {
     inputRef.current?.focus()
