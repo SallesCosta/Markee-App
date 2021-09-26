@@ -1,3 +1,4 @@
+import { RefObject } from 'react'
 import styled, { css } from 'styled-components'
 
 export const ContentInternal = styled.aside`${({ theme }) => css`
@@ -13,16 +14,23 @@ export const HeaderContentInternal = styled.header`${({ theme }) => css`
   position: absolute;
   width: 100%;
   height: 100px;
-  input {
-    background: ${theme.colors.white};
-    height: 24px;
-    width: 97px;
-    margin-left: 60px;
-    margin-top: 24px;
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
-    }
+
+`}`
+
+type InputProps = {
+  placeholder?: string;
+  ref: RefObject<HTMLInputElement>
+}
+
+export const Input = styled.input<InputProps>`${({ theme }) => css`
+  background: ${theme.colors.white};
+  height: 24px;
+  width: 97px;
+  margin-left: 60px;
+  margin-top: 24px;
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
 `}`
 
 export const SideUmInternal = styled.aside`
@@ -76,3 +84,18 @@ export const SideDoisInternal = styled(SideUmInternal)`
       border-left: 2px solid rgba(30, 41, 59, 0.12);
     }
 `
+
+export function NewCapital () {
+  const nc = '< NewCapital.in >'
+  return (
+    <>
+      <span>feito com<Strong> MUUUITO ESFORÇO</Strong> por <Strong>{nc}</Strong></span>
+    </>
+  )
+}
+
+export const Strong = styled.strong`
+  color: #27551c;
+  padding-left: 3px;
+  padding-right: 3px;
+  `

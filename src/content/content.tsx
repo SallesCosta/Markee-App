@@ -1,5 +1,5 @@
-import { ChangeEvent, useState } from 'react'
-import styled from 'styled-components/macro'
+import { Files } from './../sidebar/sidebar'
+import { ChangeEvent, RefObject } from 'react'
 import { OutroH1, WrapperSides, P } from 'ui/titulos'
 import * as S from './styled'
 import marked from 'marked'
@@ -17,87 +17,41 @@ import('highlight.js').then(hljs => {
     },
   })
 })
-export function Content () {
-  return (
-    <>
-      <S.ContentInternal>
-        <HeaderContent />
-        <ContentText />
-        <FooterContent />
-      </S.ContentInternal>
-      )
-    </>
-  )
+
+type ContentProps = {
+  inputRef: RefObject<HTMLInputElement>
+  file? : Files
+  onUpdateFileName: (id: string) => (e: ChangeEvent<HTMLInputElement>) => void
+  onUpdateFileContent: (id: string) => (e: ChangeEvent<HTMLTextAreaElement>) => void
 }
 
-function HeaderContent () {
-  return (
-    <>
-      <S.HeaderContentInternal>
-        <Input type='text' name='name' placeholder='file name..'/>
-      </S.HeaderContentInternal>
-    </>
-  )
-}
-
-type InputProps = {
-  type: string;
-  name: string;
-  placeholder?: string;
-}
-
-function Input ({ type, name, placeholder }: InputProps) {
-  return <input type={type} name={name} placeholder={placeholder} />
-}
-
-function ContentText () {
-  const [content, setContent] = useState('')
-
-  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setContent(e.target.value)
+export function Content ({ inputRef, file, onUpdateFileName, onUpdateFileContent }: ContentProps) {
+  if (!file) { // aos 11minutos do video 30
+    return null
   }
   return (
-    <>
+    <S.ContentInternal>
+      <S.HeaderContentInternal>
+        <S.Input ref={inputRef} placeholder='file name..' value={file.name} autoFocus onChange={onUpdateFileName(file.id)} />
+      </S.HeaderContentInternal>
       <S.SideUmInternal>
         <WrapperSides>
           <S.Textarea
             placeholder='conta aí...'
-            value={content}
-            onChange={handleChange}
+            value={file?.content}
+            onChange={onUpdateFileContent(file.id)}
           />
         </WrapperSides>
       </S.SideUmInternal>
       <S.SideDoisInternal>
         <WrapperSides>
           <OutroH1 texto='Bootcamp Brainn Co.' />
-          <P dangerouslySetInnerHTML={{ __html: marked(content) }} />
+          <P dangerouslySetInnerHTML={{ __html: marked(file.content) }} />
         </WrapperSides>
       </S.SideDoisInternal>
-    </>
-  )
-}
-
-function FooterContent () {
-  return (
-    <>
       <S.FooterInternal>
-        <NewCapital />
+        <S.NewCapital />
       </S.FooterInternal>
-    </>
+    </S.ContentInternal>
   )
 }
-
-function NewCapital () {
-  const nc = '< NewCapital.in >'
-  return (
-    <>
-      <span>feito com<Strong> MUUUITO ESFORÇO</Strong> por <Strong>{nc}</Strong></span>
-    </>
-  )
-}
-
-const Strong = styled.strong`
-color: #27551c;
-padding-left: 3px;
-padding-right: 3px;
-`
