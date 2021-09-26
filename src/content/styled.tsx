@@ -31,6 +31,9 @@ export const Input = styled.input<InputProps>`${({ theme }) => css`
   box-shadow: 0 0 0 0;
   border: 0 none;
   outline: 0;
+  padding: 5px;
+  flex-grow: 1;
+  font-size: 1.6rem;
 `}`
 
 export const SideUmInternal = styled.aside`
