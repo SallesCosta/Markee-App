@@ -2,14 +2,16 @@ import { Content } from './content/content'
 import { Sidebar } from './sidebar/sidebar'
 import { useFiles } from './resource/hooks'
 
-function App() {
-  const { files,
+function App () {
+  const {
+    files,
     AddNewFile,
     handleSelectFile,
     RemoveFile,
     inputRef,
     handleUpdateFileName,
-    handleUpdateFileContent } = useFiles()
+    handleUpdateFileContent,
+  } = useFiles()
 
   return (
     <>
