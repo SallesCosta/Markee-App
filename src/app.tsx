@@ -1,7 +1,7 @@
 import { Content } from './content/content'
 import { Sidebar } from './sidebar/sidebar'
 import { useFiles } from './resource/hooks'
-import { getItem } from 'localforage'
+import localforage from 'localforage'
 import { useEffect } from 'react'
 
 function App () {
@@ -17,7 +17,7 @@ function App () {
 
   useEffect(() => {
     async function storage () {
-      const value = await getItem('files')
+      const value = await localforage.getItem('files')
       console.log('salvou no storage :', value)
     }
     storage()
@@ -37,7 +37,6 @@ function App () {
         onUpdateFileName={handleUpdateFileName}
         onUpdateFileContent={handleUpdateFileContent}
       />
-
     </>
   )
 }
