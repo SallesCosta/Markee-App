@@ -1,16 +1,11 @@
 import { BtnAdicionar } from '../ui/buttons'
-import { v4 as uuidv4 } from 'uuid'
-import { useState, RefObject } from 'react'
+import { MouseEvent } from 'react'
 import { HeaderSide } from './header-Sidebar'
 import * as S from './sidebar-styles'
 
-type SidebarProps = {
-  inputRef: RefObject<HTMLInputElement>
-}
-
 export type Status = 'editing' | 'saving' | 'saved'
 
-type Files = {
+export type Files = {
   id: string
   name: string
   content: string
@@ -18,46 +13,24 @@ type Files = {
   status: Status
 }
 
-// function MajIcon ({inputRef}) {
-//   const [status, setStatus] = useState('')
-//   (inputRef.focus)
-// }
+type SidebarProps = {
+  files: Files[]
+  onAddNewFile: () => void
+  onSelectFile: (id: string) => (e: MouseEvent) => void
+  onRemoveFile: (id: string) => void
+}
 
-export function Sidebar ({ inputRef }: SidebarProps) {
-  const [files, setFiles] = useState<Files[]>([])
-
-  const AddNewFile = () => {
-    inputRef.current?.focus()
-
-    setFiles(files => files
-      .map(file => ({
-        ...file,
-        active: false,
-      }))
-      .concat({
-        id: uuidv4(),
-        name: 'Sem título',
-        content: '',
-        active: true,
-        status: 'saved',
-      }))
-  }
-
-  const RemoveFile = (id: string) => {
-    setFiles(prevState => prevState.filter(file => file.id !== id))
-    console.log('excluiu arquivo: ', id)
-  }
-
+export function Sidebar ({ onAddNewFile, onSelectFile, onRemoveFile, files }: SidebarProps) {
   return (
     <S.SidebarInternal>
-      <BtnAdicionar onClick={AddNewFile}>+ Adicionar arquivo</BtnAdicionar>
+      <BtnAdicionar onClick={onAddNewFile}>+ Adicionar arquivo</BtnAdicionar>
       <HeaderSide />
       <S.H2><span>Arquivos</span></S.H2>
       <S.Wrapper>
         <S.FileList>
           {files.map(file => (
             <S.FileListItem key={(file.id)}>
-              <S.FileItemLink href={`${file.id}`} active={file.active}>
+              <S.FileItemLink href={`/file/${file.id}`} active={file.active} onClick={onSelectFile(file.id)}>
                 {file.name}
               </S.FileItemLink>
 
@@ -65,7 +38,7 @@ export function Sidebar ({ inputRef }: SidebarProps) {
 
               {!file.active && (
                 <S.RemoveButton title={`Remover o arquivo ${file.name}`}>
-                  <S.RemoveIcon onClick={() => RemoveFile(file.id)} />
+                  <S.RemoveIcon onClick={() => onRemoveFile(file.id)} />
                 </S.RemoveButton>
               )}
             </S.FileListItem>
