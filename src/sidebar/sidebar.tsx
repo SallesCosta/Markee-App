@@ -22,29 +22,32 @@ type SidebarProps = {
 
 export function Sidebar ({ onAddNewFile, onSelectFile, onRemoveFile, files }: SidebarProps) {
   return (
-    <S.SidebarInternal>
-      <BtnAdicionar onClick={onAddNewFile}>+ Adicionar arquivo</BtnAdicionar>
-      <HeaderSide />
-      <S.H2><span>Arquivos</span></S.H2>
-      <S.Wrapper>
-        <S.FileList>
-          {files.map(file => (
-            <S.FileListItem key={(file.id)}>
-              <S.FileItemLink href={`/file/${file.id}`} active={file.active} onClick={onSelectFile(file.id)}>
-                {file.name}
-              </S.FileItemLink>
+    <>
+      <S.SidebarInternal>
+        <BtnAdicionar onClick={onAddNewFile}>+ Adicionar arquivo</BtnAdicionar>
+        <HeaderSide />
+        <S.H2><span>Arquivos</span></S.H2>
+        <S.Wrapper>
+          <S.FileList>
+            {files.map(file => (
+              <S.FileListItem key={(file.id)}>
+                <S.FileItemLink href={`/file/${file.id}`} active={file.active} onClick={onSelectFile(file.id)}>
+                  {file.name}
+                </S.FileItemLink>
 
-              {file.active && <S.StatusIconStyled status={file.status} />}
+                {file.active && <S.StatusIconStyled status={file.status} />}
 
-              {!file.active && (
-                <S.RemoveButton title={`Remover o arquivo ${file.name}`}>
-                  <S.RemoveIcon onClick={() => onRemoveFile(file.id)} />
-                </S.RemoveButton>
-              )}
-            </S.FileListItem>
-          ))}
-        </S.FileList>
-      </S.Wrapper>
-    </S.SidebarInternal>
+                {!file.active && (
+                  <S.RemoveButton title={`Remover o arquivo ${file.name}`}>
+                    <S.RemoveIcon onClick={() => onRemoveFile(file.id)} />
+                  </S.RemoveButton>
+                )}
+              </S.FileListItem>
+            ))}
+          </S.FileList>
+        </S.Wrapper>
+      </S.SidebarInternal>
+
+    </>
   )
 }
