@@ -41,7 +41,7 @@ export const Button = styled.button`${({ theme }) => css`
   &:hover {
     background: ${theme.colors.primaryDark};
   }
-`}`
+  `}`
 
 export const FileList = styled.ul`
   list-style: none;
@@ -126,12 +126,22 @@ export const H2 = styled.h2`${({ theme }) => css`
   position: relative;
   padding-left: 20px;
   margin: 40px 0 32px;
-  span {
+  span  {
     background-color: ${theme.colors.black};
     display: inline-block;
     position: relative;
     padding: 0 10px;
     z-index: 1;
+  }
+  a  {
+    background-color: ${theme.colors.black};
+    color: ${theme.colors.white};
+    display: inline-block;
+    position: relative;
+    margin-left: 30px;
+    padding: 0 10px;
+    z-index: 1;
+    text-decoration: none;
   }
   &::before {
     background: ${theme.colors.primary};

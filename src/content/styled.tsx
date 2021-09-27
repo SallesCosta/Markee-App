@@ -14,7 +14,7 @@ export const HeaderContentInternal = styled.header`${({ theme }) => css`
   position: absolute;
   width: 100%;
   height: 100px;
-
+  align-items: flex-start;
 `}`
 
 type InputProps = {
