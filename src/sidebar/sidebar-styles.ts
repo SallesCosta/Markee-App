@@ -88,8 +88,12 @@ export const FileItemLink = styled.a<FileItemLinkProps>`${({ theme, active }) =>
   font-size: 1.6rem;
   margin-bottom: 4px;
   padding: 8px 32px;
+  min-height: 34px;
   padding-left: 50px;
   text-decoration: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
   ${active && css`
     background-color: ${theme.colors.lightBlack};
   `}

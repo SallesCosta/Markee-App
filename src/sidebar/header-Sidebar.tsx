@@ -23,9 +23,9 @@ color: ${theme.colors.white};
   span {
     color: ${theme.colors.primary}
   }
-`}`
+ `}`
 
-const Ajuste = styled.div`
+ const Ajuste = styled.div`
   display: flex;
   margin-left: 84px;
   margin-top: 48px;

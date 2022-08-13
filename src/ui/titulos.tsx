@@ -44,6 +44,4 @@ export const P = styled.p`${({ theme }) => css`
   line-height: 23px;
   letter-spacing: 0em;
   text-align: left;
-
-
 `}`

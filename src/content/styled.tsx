@@ -34,6 +34,9 @@ export const Input = styled.input<InputProps>`${({ theme }) => css`
   padding: 5px;
   flex-grow: 1;
   font-size: 1.6rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
 `}`
 
 export const SideUmInternal = styled.aside`

@@ -26,7 +26,7 @@ type ContentProps = {
 }
 
 export function Content ({ inputRef, file, onUpdateFileName, onUpdateFileContent }: ContentProps) {
-  if (!file) { // aos 11minutos do video 30
+  if (!file) {
     return null
   }
   return (
