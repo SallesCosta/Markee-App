@@ -50,4 +50,3 @@ export function Sidebar ({ onAddNewFile, onSelectFile, onRemoveFile, files }: Si
     </>
   )
 }
-

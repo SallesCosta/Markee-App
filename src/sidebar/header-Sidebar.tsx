@@ -25,7 +25,7 @@ color: ${theme.colors.white};
   }
  `}`
 
- const Ajuste = styled.div`
+const Ajuste = styled.div`
   display: flex;
   margin-left: 84px;
   margin-top: 48px;
