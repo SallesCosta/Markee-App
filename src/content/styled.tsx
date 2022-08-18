@@ -104,7 +104,7 @@ export const FooterInternal = styled.footer`
   `}
 `
 
-export function NewCapital() {
+export function NewCapital () {
   const nc = '< NewCapital.in >'
   return (
     <>
