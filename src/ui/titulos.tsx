@@ -23,10 +23,6 @@ const PInternal = styled.p`${({ theme }) => css`
   text-align: left;
 `}`
 
-export const WrapperSides = styled.div`
-    padding-left: 32px;
-  `
-
 export function OutroH1 ({ texto }: Text) {
   return <OutroH1Internal>{texto}</OutroH1Internal>
 }
@@ -44,6 +40,4 @@ export const P = styled.p`${({ theme }) => css`
   line-height: 23px;
   letter-spacing: 0em;
   text-align: left;
-
-
 `}`

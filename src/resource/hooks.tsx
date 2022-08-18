@@ -1,7 +1,17 @@
 import { useRef, useState, useEffect, ChangeEvent, MouseEvent } from 'react'
 import { v4 as uuidv4 } from 'uuid'
-import { Files } from '../sidebar/sidebar'
+// import { Files } from '../sidebar/sidebar'
 import localforage from 'localforage'
+
+export type Status = 'editing' | 'saving' | 'saved'
+
+export type Files = {
+  id: string
+  name: string
+  content: string
+  active: boolean
+  status: Status
+}
 
 export function useFiles () {
   const inputRef = useRef<HTMLInputElement>(null)
@@ -45,7 +55,6 @@ export function useFiles () {
     }
 
     updateStatus()
-
     return () => clearTimeout(timer)
   }, [files])
 

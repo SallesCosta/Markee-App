@@ -9,4 +9,9 @@ export const theme: DefaultTheme = {
     primary: '#1FC8E1',
     primaryDark: '#18A1B5',
   },
+  dim: {
+    sidebarW: '315px',
+    headerH: '100px',
+    footerH: '45px',
+  },
 }

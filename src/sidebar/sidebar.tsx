@@ -47,7 +47,6 @@ export function Sidebar ({ onAddNewFile, onSelectFile, onRemoveFile, files }: Si
           </S.FileList>
         </S.Wrapper>
       </S.SidebarInternal>
-
     </>
   )
 }

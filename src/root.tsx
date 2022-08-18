@@ -1,6 +1,6 @@
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
-import { App } from './app'
 import { theme } from './resource/theme'
+import { App } from './app'
 import 'normalize.css'
 
 const GlobalStyle = createGlobalStyle`
@@ -8,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 html {
-  font-size: 62.5%;  //essa configuração me garante que 1rem seja = a 10p x
+  font-size: 62.5%;  //essa configuração me garante que 1rem seja = a 10px
 }
 
 body{

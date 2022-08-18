@@ -23,7 +23,7 @@ color: ${theme.colors.white};
   span {
     color: ${theme.colors.primary}
   }
-`}`
+ `}`
 
 const Ajuste = styled.div`
   display: flex;
