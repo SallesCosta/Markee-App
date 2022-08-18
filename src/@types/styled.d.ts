@@ -8,7 +8,13 @@ declare module 'styled-components' {
       primary: string
       primaryDark: string
     }
+
+    dim: {
+      sidebarW: string
+      headerH: string
+      footerH: string
+    }
   }
 }
 
-export { }
+export {}
